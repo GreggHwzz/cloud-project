@@ -14,7 +14,7 @@ Avant de tester ce projet, assurez-vous d'avoir installé :
 ## 🚀 Lancer le projet en local (sans Docker)
 ### 1️⃣ Cloner le dépôt
 ```bash
-git clone https://github.com/ton-user/nom-du-projet.git
+git clone https://github.com/GreggHwzz/cloud-project.git
 cd nom-du-projet/backend/service1
 ```
 
@@ -39,12 +39,12 @@ Hello World from Service 1!
 ## 🐳 Exécuter avec Docker
 ### 1️⃣ Construire l’image Docker
 ```bash
-docker build -t mon-projet-service1 .
+docker build -t cloud-service1 .
 ```
 
 ### 2️⃣ Lancer le conteneur
 ```bash
-docker run -p 8080:8080 mon-projet-service1
+docker run -p 8080:8080 cloud-service1
 ```
 
 ### 3️⃣ Tester l'API
@@ -76,15 +76,4 @@ kubectl get pods
 minikube service service1 --url
 ```
 Cela retournera une URL que vous pourrez tester dans votre navigateur ou avec `curl`.
-
----
-
-## 🛠️ Prochaines étapes
-- Ajouter un deuxième microservice et les connecter
-- Intégrer une base de données (PostgreSQL / MySQL)
-- Ajouter une API Gateway
-
----
-
-Si vous avez des questions, n'hésitez pas à me contacter ! 🚀
 
