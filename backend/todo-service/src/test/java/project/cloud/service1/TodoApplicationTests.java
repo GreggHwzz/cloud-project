@@ -1,10 +1,10 @@
-package project.cloud.service1;
+package project.cloud.todo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Service1ApplicationTests {
+class TodoApplicationTests {
 
 	@Test
 	void contextLoads() {

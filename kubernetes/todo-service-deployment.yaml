@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service1
+  name: todo-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service1
+      app: todo-service
   template:
     metadata:
       labels:
-        app: service1
+        app: todo-service
     spec:
       containers:
-        - name: service1
-          image: cloud-service1
+        - name: todo-service
+          image: todo-service
           ports:
             - containerPort: 8080
