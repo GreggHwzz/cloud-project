@@ -15,7 +15,7 @@ Avant de tester ce projet, assurez-vous d'avoir installé :
 ### 1️⃣ Cloner le dépôt
 ```bash
 git clone https://github.com/GreggHwzz/cloud-project.git
-cd nom-du-projet/backend/todo-service
+cd cloud-project/backend/todo-service
 ```
 
 ### 2️⃣ Compiler et exécuter l’application
