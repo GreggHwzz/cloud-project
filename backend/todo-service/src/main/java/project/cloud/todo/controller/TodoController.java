@@ -19,9 +19,15 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @GetMapping
-    public List<Todo> getAllTodos() {
-        return todoService.getAllTodos();
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getTodoById(@PathVariable Long id) {
+        Todo todo = todoService.getTodoById(id);
+        if (todo != null) {
+            return ResponseEntity.ok(todo);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Task with ID " + id + " not found.");
+        }
     }
 
     @PostMapping

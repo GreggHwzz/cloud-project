@@ -1,0 +1,23 @@
+version: '3'
+services:
+  todo-service:
+    build: ./backend/todo-service
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  notification-service:
+    build: ./backend/notification-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - todo-service
+    environment:
+      - TODO_SERVICE_URL=http://todo-service:8080
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

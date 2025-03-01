@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: todo-service
 spec:
-  type: LoadBalancer 
+  type: ClusterIP
   selector:
     app: todo-service
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
+  clusterIP: 10.100.38.49
 
