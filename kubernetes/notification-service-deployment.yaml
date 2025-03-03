@@ -12,6 +12,7 @@ spec:
       labels:
         app: notification-service
     spec:
+      serviceAccountName: app-service-account
       containers:
       - name: notification-service
         image: notification-service:latest
@@ -19,5 +20,8 @@ spec:
         ports:
         - containerPort: 8081
         env:
-        - name: TODO_SERVICE_URL
-          value: http://todo-service
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: postgres-password

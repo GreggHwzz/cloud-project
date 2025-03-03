@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: todo-service
 spec:
+  serviceAccountName: app-service-account
   replicas: 1
   selector:
     matchLabels:
@@ -14,6 +15,9 @@ spec:
     spec:
       containers:
         - name: todo-service
-          image: gregghouzz/todo-service:latest
-          ports:
-            - containerPort: 8080
+          env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-secrets
+                key: postgres-password
