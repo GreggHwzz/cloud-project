@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: todo-service
 spec:
-  serviceAccountName: app-service-account
   replicas: 1
   selector:
     matchLabels:
@@ -13,8 +12,10 @@ spec:
       labels:
         app: todo-service
     spec:
+      serviceAccountName: app-service-account
       containers:
         - name: todo-service
+          image: gregghouzz/todo-service:latest  
           env:
           - name: POSTGRES_PASSWORD
             valueFrom:
